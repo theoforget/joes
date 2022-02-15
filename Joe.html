@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Joe’s Hotdog Stand</title>
+    <style>   
+    h1 {text-align: center; font-family:optima; font-size:20px; color: black; background-color: white; opacity: 0.6;} 
+    @media screen and (min-width: 850px) {
+        body {background-image: url('bigbackground.jpg'); margin-left: auto; margin-right: auto; background-repeat: no-repeat; background-size: 100% auto;}
+    }
+    @media screen and (max-width: 849px) {
+        body {background-image: url('background.jpg'); margin-left: auto; margin-right: auto; background-repeat: no-repeat; background-size: 100% auto;}
+    }
+    .navbar {overflow: hidden; background-color: #333; position: fixed; top: 0; height: 15%; width: 100%; z-index: 10;  pacity: 0.9;}
+    .box{ font-family:optima; align:justify; background-color:white; border-radius:4px; font-size:20px; padding:15px; margin:10px; opacity:0.9;}
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="hotdog.png" width=auto height=100%> 
+    </div>
+    <br> <br> <br> <br> <br> <br>
+    <h1> <br> Welcome to Joe's Hotdog Stand! <br>
+    better hotdogs, better price <br>  <br>
+    You order will be ready in 15 minutes! <br>
+    Here are the details of your order: <br> <br> </h1> <br>
+    <div class="box">
+        Order Summary: <br> <br>
+    <script language="javascript">
+        var num_hotdog = parseInt(prompt("How many Hotdogs would you like?"));
+        var num_fries = parseInt(prompt("How many Fries would you like?"));
+        var num_sodas = parseInt(prompt("How many Sodas would you like?"));
+        if (num_hotdog != 0) {
+            document.write("Number of Hotdogs: " + num_hotdog + "<br>");
+        }
+        if (num_fries != 0) {
+            document.write("Number of Fries: " + num_fries + "<br>");
+        }
+        if (num_sodas != 0) {
+            document.write("Number of Sodas: " + num_sodas + "<br>");
+        }
+        var sum = num_hotdog * 3.75 + num_fries * 2.00 + num_sodas * 1.80;
+        document.write("Subtotal: $" + sum + "<br>");
+        var discount = 0;
+        if (sum >= 20) {
+            discount = sum * 0.10;
+            sum -= discount;
+            document.write("Discount: -$" + discount.toFixed(2) + "<br>");
+        }
+        var tax = (sum * 0.0625);
+        sum += tax;
+        document.write("Tax: $" + tax.toFixed(2) + "<br>");
+        document.write("Final Total: $" + sum.toFixed(2));
+    </script>
+    </div>
+    
+    <br> <h1> <br> Thank you for your order! <br>
+    If you have any questions, call us at (JOE) HOT-DOGS <br> <br> </h1> <br>
+        
+<body>
+</html>
